@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import checkConst from '../../utils/checkConst.js';
+const Node = require('../Node.js');
+const checkConst = require('../../utils/checkConst.js');
 
-export default class UpdateExpression extends Node {
+class UpdateExpression extends Node {
 	initialise(transforms) {
 		if (this.argument.type === 'Identifier') {
 			const declaration = this.findScope(false).findDeclaration(
@@ -30,3 +30,5 @@ export default class UpdateExpression extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = UpdateExpression;

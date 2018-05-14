@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class JSXExpressionContainer extends Node {
+class JSXExpressionContainer extends Node {
 	transpile(code, transforms) {
 		code.remove(this.start, this.expression.start);
 		code.remove(this.expression.end, this.end);
@@ -8,3 +8,5 @@ export default class JSXExpressionContainer extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = JSXExpressionContainer;

@@ -1,8 +1,8 @@
-import LoopStatement from './shared/LoopStatement.js';
-import destructure from '../../utils/destructure.js';
-import extractNames from '../extractNames.js';
+const LoopStatement = require('./shared/LoopStatement.js');
+const destructure = require('../../utils/destructure.js');
+const extractNames = require('../extractNames.js');
 
-export default class ForInStatement extends LoopStatement {
+class ForInStatement extends LoopStatement {
 	findScope(functionScope) {
 		return functionScope || !this.createdScope
 			? this.parent.findScope(functionScope)
@@ -68,3 +68,5 @@ export default class ForInStatement extends LoopStatement {
 		});
 	}
 }
+
+module.exports = ForInStatement;

@@ -1,7 +1,7 @@
-import types from './types/index.js';
-import BlockStatement from './BlockStatement.js';
-import Node from './Node.js';
-import keys from './keys.js';
+const types = require('./types/index.js');
+const BlockStatement = require('./BlockStatement.js');
+const Node = require('./Node.js');
+const keys = require('./keys.js');
 
 const statementsWithBlocks = {
 	IfStatement: 'consequent',
@@ -13,7 +13,7 @@ const statementsWithBlocks = {
 	ArrowFunctionExpression: 'body'
 };
 
-export default function wrap(raw, parent) {
+module.exports = wrap; function wrap(raw, parent) {
 	if (!raw) return;
 
 	if ('length' in raw) {

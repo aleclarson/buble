@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class IfStatement extends Node {
+class IfStatement extends Node {
 	initialise(transforms) {
 		super.initialise(transforms);
 	}
@@ -27,3 +27,5 @@ export default class IfStatement extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = IfStatement;

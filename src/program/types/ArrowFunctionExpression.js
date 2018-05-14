@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import removeTrailingComma from '../../utils/removeTrailingComma.js';
+const Node = require('../Node.js');
+const removeTrailingComma = require('../../utils/removeTrailingComma.js');
 
-export default class ArrowFunctionExpression extends Node {
+class ArrowFunctionExpression extends Node {
 	initialise(transforms) {
 		this.body.createScope();
 		super.initialise(transforms);
@@ -50,3 +50,5 @@ export default class ArrowFunctionExpression extends Node {
 		);
 	}
 }
+
+module.exports = ArrowFunctionExpression;

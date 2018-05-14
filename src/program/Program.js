@@ -1,8 +1,8 @@
-import MagicString from 'magic-string';
-import BlockStatement from './BlockStatement.js';
-import wrap from './wrap.js';
+const MagicString = require('magic-string');
+const BlockStatement = require('./BlockStatement.js');
+const wrap = require('./wrap.js');
 
-export default function Program(source, ast, transforms, options) {
+function Program(source, ast, transforms, options) {
 	this.type = 'Root';
 
 	// options
@@ -72,3 +72,5 @@ Program.prototype = {
 		return this.objectWithoutPropertiesHelper;
 	}
 };
+
+module.exports = Program;

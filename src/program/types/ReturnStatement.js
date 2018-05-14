@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class ReturnStatement extends Node {
+class ReturnStatement extends Node {
 	initialise(transforms) {
 		this.loop = this.findNearest(loopStatement);
 		this.nearestFunction = this.findNearest(/Function/);
@@ -30,3 +30,5 @@ export default class ReturnStatement extends Node {
 		}
 	}
 }
+
+module.exports = ReturnStatement;

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	Program: ['body'],
 	Literal: []
 };

@@ -1,5 +1,5 @@
-import CompileError from '../utils/CompileError.js';
-import { findIndex } from './array.js';
+const CompileError = require('../utils/CompileError.js');
+const { findIndex } = require('./array.js');
 
 const handlers = {
 	Identifier: destructureIdentifier,
@@ -8,7 +8,7 @@ const handlers = {
 	ObjectPattern: destructureObjectPattern
 };
 
-export default function destructure(
+module.exports = destructure; function destructure(
 	code,
 	createIdentifier,
 	resolveName,

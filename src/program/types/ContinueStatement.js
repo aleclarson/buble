@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class ContinueStatement extends Node {
+class ContinueStatement extends Node {
 	transpile(code) {
 		const loop = this.findNearest(loopStatement);
 		if (loop.shouldRewriteAsFunction) {
@@ -15,3 +15,5 @@ export default class ContinueStatement extends Node {
 		}
 	}
 }
+
+module.exports = ContinueStatement;

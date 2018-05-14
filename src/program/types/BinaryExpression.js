@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class BinaryExpression extends Node {
+class BinaryExpression extends Node {
 	transpile(code, transforms) {
 		if (this.operator === '**' && transforms.exponentiation) {
 			code.prependRight(this.start, `Math.pow( `);
@@ -10,3 +10,5 @@ export default class BinaryExpression extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = BinaryExpression;

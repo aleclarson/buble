@@ -1,6 +1,6 @@
-import Node from '../../Node.js';
+const Node = require('../../Node.js');
 
-export default class LoopStatement extends Node {
+class LoopStatement extends Node {
 	findScope(functionScope) {
 		return functionScope || !this.createdScope
 			? this.parent.findScope(functionScope)
@@ -103,3 +103,5 @@ export default class LoopStatement extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = LoopStatement;

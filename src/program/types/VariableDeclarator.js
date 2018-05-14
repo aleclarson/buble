@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class VariableDeclarator extends Node {
+class VariableDeclarator extends Node {
 	initialise(transforms) {
 		let kind = this.parent.kind;
 		if (kind === 'let' && this.parent.parent.type === 'ForStatement') {
@@ -41,3 +41,5 @@ export default class VariableDeclarator extends Node {
 		);
 	}
 }
+
+module.exports = VariableDeclarator;

@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class ClassExpression extends Node {
+class ClassExpression extends Node {
 	initialise(transforms) {
 		this.name = ( this.id
 			? this.id.name
@@ -49,3 +49,5 @@ export default class ClassExpression extends Node {
 		}
 	}
 }
+
+module.exports = ClassExpression;

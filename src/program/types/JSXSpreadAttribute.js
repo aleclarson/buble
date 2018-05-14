@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class JSXSpreadAttribute extends Node {
+class JSXSpreadAttribute extends Node {
 	transpile(code, transforms) {
 		code.remove(this.start, this.argument.start);
 		code.remove(this.argument.end, this.end);
@@ -8,3 +8,5 @@ export default class JSXSpreadAttribute extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = JSXSpreadAttribute;

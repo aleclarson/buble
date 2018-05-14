@@ -1,1 +1,1 @@
-export const loopStatement = /(?:For(?:In|Of)?|While)Statement/;
+exports.loopStatement = /(?:For(?:In|Of)?|While)Statement/;

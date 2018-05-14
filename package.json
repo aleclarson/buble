@@ -2,7 +2,7 @@
   "name": "buble",
   "version": "0.19.3",
   "description": "The blazing fast, batteries-included ES2015 compiler",
-  "main": "dist/buble.cjs.js",
+  "main": "src/index.js",
   "module": "dist/buble.es.js",
   "browser": {
     "dist/buble.cjs.js": "./dist/buble-browser.cjs.js",

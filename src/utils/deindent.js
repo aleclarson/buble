@@ -2,7 +2,7 @@
 // not its current edited state.
 // That's not a problem for the way that it's currently used, but it could
 // be in future...
-export default function deindent(node, code) {
+module.exports = deindent; function deindent(node, code) {
 	const start = node.start;
 	const end = node.end;
 

@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class BreakStatement extends Node {
+class BreakStatement extends Node {
 	initialise() {
 		const loop = this.findNearest(loopStatement);
 		const switchCase = this.findNearest('SwitchCase');
@@ -24,3 +24,5 @@ export default class BreakStatement extends Node {
 		}
 	}
 }
+
+module.exports = BreakStatement;

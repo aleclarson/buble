@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class ThisExpression extends Node {
+class ThisExpression extends Node {
 	initialise(transforms) {
 		if (transforms.arrow) {
 			const lexicalBoundary = this.findLexicalBoundary();
@@ -29,3 +29,5 @@ export default class ThisExpression extends Node {
 		}
 	}
 }
+
+module.exports = ThisExpression;

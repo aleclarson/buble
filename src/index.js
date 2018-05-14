@@ -1,9 +1,9 @@
-import * as acorn from 'acorn';
-import acornJsx from 'acorn-jsx/inject';
-import acornDynamicImport from 'acorn-dynamic-import/lib/inject';
-import Program from './program/Program.js';
-import { features, matrix } from './support.js';
-import getSnippet from './utils/getSnippet.js';
+const acorn = require('acorn');
+const acornJsx = require('acorn-jsx/inject');
+const acornDynamicImport = require('acorn-dynamic-import/lib/inject').default;
+const Program = require('./program/Program.js');
+const { features, matrix } = require('./support.js');
+const getSnippet = require('./utils/getSnippet.js');
 
 const { parse } = [acornJsx, acornDynamicImport].reduce(
 	(final, plugin) => plugin(final),
@@ -12,7 +12,7 @@ const { parse } = [acornJsx, acornDynamicImport].reduce(
 
 const dangerousTransforms = ['dangerousTaggedTemplateString', 'dangerousForOf'];
 
-export function target(target) {
+function target(target) {
 	const targets = Object.keys(target);
 	let bitmask = targets.length
 		? 0b11111111111111111111
@@ -51,7 +51,7 @@ export function target(target) {
 	return transforms;
 }
 
-export function transform(source, options = {}) {
+function transform(source, options = {}) {
 	let ast;
 	let jsx = null;
 
@@ -95,4 +95,6 @@ export function transform(source, options = {}) {
 	return new Program(source, ast, transforms, options).export(options);
 }
 
-export { version as VERSION } from '../package.json';
+exports.target = target;
+exports.transform = transform;
+exports.VERSION = require('../package.json').version;

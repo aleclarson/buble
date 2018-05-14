@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class SpreadElement extends Node {
+class SpreadElement extends Node {
 	transpile(code, transforms) {
 		if (this.parent.type == 'ObjectExpression') {
 			code.remove(this.start, this.argument.start);
@@ -10,3 +10,5 @@ export default class SpreadElement extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = SpreadElement;

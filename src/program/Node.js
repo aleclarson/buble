@@ -24,7 +24,7 @@ function toJSON(node) {
 	return obj;
 }
 
-export default class Node {
+class Node {
 	ancestor(level) {
 		let node = this;
 		while (level--) {
@@ -110,3 +110,5 @@ export default class Node {
 		}
 	}
 }
+
+module.exports = Node;

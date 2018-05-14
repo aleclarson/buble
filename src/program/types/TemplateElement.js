@@ -1,7 +1,9 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class TemplateElement extends Node {
+class TemplateElement extends Node {
 	initialise() {
 		this.program.indentExclusionElements.push(this);
 	}
 }
+
+module.exports = TemplateElement;

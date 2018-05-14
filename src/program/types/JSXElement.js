@@ -1,4 +1,4 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
 function normalise(str, removeTrailingWhitespace) {
 
@@ -16,7 +16,7 @@ function normalise(str, removeTrailingWhitespace) {
 	return JSON.stringify(str);
 }
 
-export default class JSXElement extends Node {
+class JSXElement extends Node {
 	transpile(code, transforms) {
 		super.transpile(code, transforms);
 
@@ -55,3 +55,5 @@ export default class JSXElement extends Node {
 		}
 	}
 }
+
+module.exports = JSXElement;

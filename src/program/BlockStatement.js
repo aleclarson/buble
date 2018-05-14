@@ -1,6 +1,6 @@
-import Node from './Node.js';
-import Scope from './Scope.js';
-import destructure from '../utils/destructure.js';
+const Node = require('./Node.js');
+const Scope = require('./Scope.js');
+const destructure = require('../utils/destructure.js');
 
 function isUseStrict(node) {
 	if (!node) return false;
@@ -9,7 +9,7 @@ function isUseStrict(node) {
 	return node.expression.value === 'use strict';
 }
 
-export default class BlockStatement extends Node {
+class BlockStatement extends Node {
 	createScope() {
 		this.parentIsFunction = /Function/.test(this.parent.type);
 		this.isFunctionBlock = this.parentIsFunction || this.parent.type === 'Root';
@@ -371,3 +371,5 @@ export default class BlockStatement extends Node {
 		});
 	}
 }
+
+module.exports = BlockStatement;

@@ -1,8 +1,10 @@
-export default function extractNames(node) {
+function extractNames(node) {
 	const names = [];
 	extractors[node.type](names, node);
 	return names;
 }
+
+module.exports = extractNames;
 
 const extractors = {
 	Identifier(names, node) {

@@ -1,8 +1,10 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class ImportSpecifier extends Node {
+class ImportSpecifier extends Node {
 	initialise(transforms) {
 		this.findScope(true).addDeclaration(this.local, 'import');
 		super.initialise(transforms);
 	}
 }
+
+module.exports = ImportSpecifier;

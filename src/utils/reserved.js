@@ -3,4 +3,4 @@ let reserved = Object.create(null);
 	.split(' ')
 	.forEach(word => (reserved[word] = true));
 
-export default reserved;
+module.exports = reserved;

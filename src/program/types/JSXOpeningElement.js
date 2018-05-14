@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
 
-export default class JSXOpeningElement extends Node {
+class JSXOpeningElement extends Node {
 	transpile(code, transforms) {
 		super.transpile(code, transforms);
 
@@ -91,3 +91,5 @@ export default class JSXOpeningElement extends Node {
 		}
 	}
 }
+
+module.exports = JSXOpeningElement;

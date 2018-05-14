@@ -1,6 +1,6 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
-export default class TemplateLiteral extends Node {
+class TemplateLiteral extends Node {
 	transpile(code, transforms) {
 		super.transpile(code, transforms);
 
@@ -78,3 +78,5 @@ export default class TemplateLiteral extends Node {
 		}
 	}
 }
+
+module.exports = TemplateLiteral;

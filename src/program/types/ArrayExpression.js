@@ -1,7 +1,8 @@
-import Node from '../Node.js';
-import spread, { isArguments } from '../../utils/spread.js';
+const Node = require('../Node.js');
+const spread = require('../../utils/spread.js');
+const { isArguments } = spread;
 
-export default class ArrayExpression extends Node {
+class ArrayExpression extends Node {
 	initialise(transforms) {
 		if (transforms.spreadRest && this.elements.length) {
 			const lexicalBoundary = this.findLexicalBoundary();
@@ -68,3 +69,5 @@ export default class ArrayExpression extends Node {
 		}
 	}
 }
+
+module.exports = ArrayExpression;

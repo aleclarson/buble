@@ -1,7 +1,7 @@
-import locate from './locate.js';
-import getSnippet from './getSnippet.js';
+const locate = require('./locate.js');
+const getSnippet = require('./getSnippet.js');
 
-export default class CompileError extends Error {
+class CompileError extends Error {
 	constructor(message, node) {
 		super(message);
 
@@ -28,3 +28,5 @@ export default class CompileError extends Error {
 		return `${this.name}: ${this.message}\n${this.snippet}`;
 	}
 }
+
+module.exports = CompileError;

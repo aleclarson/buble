@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import destructure from '../../utils/destructure.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const destructure = require('../../utils/destructure.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class VariableDeclaration extends Node {
+class VariableDeclaration extends Node {
 	initialise(transforms) {
 		this.scope = this.findScope(this.kind === 'var');
 		this.declarations.forEach(declarator => declarator.initialise(transforms));
@@ -100,3 +100,5 @@ export default class VariableDeclaration extends Node {
 		}
 	}
 }
+
+module.exports = VariableDeclaration;

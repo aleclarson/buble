@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import isReference from '../../utils/isReference.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const isReference = require('../../utils/isReference.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class Identifier extends Node {
+class Identifier extends Node {
 	findScope(functionScope) {
 		if (this.parent.params && ~this.parent.params.indexOf(this)) {
 			return this.parent.body.scope;
@@ -52,3 +52,5 @@ export default class Identifier extends Node {
 		}
 	}
 }
+
+module.exports = Identifier;

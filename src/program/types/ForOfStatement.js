@@ -1,8 +1,8 @@
-import LoopStatement from './shared/LoopStatement.js';
-import CompileError from '../../utils/CompileError.js';
-import destructure from '../../utils/destructure.js';
+const LoopStatement = require('./shared/LoopStatement.js');
+const CompileError = require('../../utils/CompileError.js');
+const destructure = require('../../utils/destructure.js');
 
-export default class ForOfStatement extends LoopStatement {
+class ForOfStatement extends LoopStatement {
 	initialise(transforms) {
 		if (transforms.forOf && !transforms.dangerousForOf)
 			throw new CompileError(
@@ -87,3 +87,5 @@ export default class ForOfStatement extends LoopStatement {
 		}
 	}
 }
+
+module.exports = ForOfStatement;

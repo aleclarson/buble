@@ -1,7 +1,7 @@
-import extractNames from './extractNames.js';
-import reserved from '../utils/reserved.js';
+const extractNames = require('./extractNames.js');
+const reserved = require('../utils/reserved.js');
 
-export default function Scope(options) {
+function Scope(options) {
 	options = options || {};
 
 	this.parent = options.parent;
@@ -114,3 +114,5 @@ Scope.prototype = {
 		return declaration ? declaration.name : name;
 	}
 };
+
+module.exports = Scope;

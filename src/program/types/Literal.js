@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
-import rewritePattern from 'regexpu-core';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
+const rewritePattern = require('regexpu-core');
 
-export default class Literal extends Node {
+class Literal extends Node {
 	initialise() {
 		if (typeof this.value === 'string') {
 			this.program.indentExclusionElements.push(this);
@@ -40,3 +40,5 @@ export default class Literal extends Node {
 		}
 	}
 }
+
+module.exports = Literal;

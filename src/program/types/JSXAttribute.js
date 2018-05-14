@@ -1,4 +1,4 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
 const hasDashes = val => /-/.test(val);
 
@@ -6,7 +6,7 @@ const formatKey = key => (hasDashes(key) ? `'${key}'` : key);
 
 const formatVal = val => (val ? '' : 'true');
 
-export default class JSXAttribute extends Node {
+class JSXAttribute extends Node {
 	transpile(code, transforms) {
 		const { start, name } = this.name;
 
@@ -18,3 +18,5 @@ export default class JSXAttribute extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = JSXAttribute;

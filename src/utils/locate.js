@@ -1,4 +1,4 @@
-export default function locate(source, index) {
+module.exports = locate; function locate(source, index) {
 	var lines = source.split('\n');
 	var len = lines.length;
 

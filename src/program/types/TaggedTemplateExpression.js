@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
 
-export default class TaggedTemplateExpression extends Node {
+class TaggedTemplateExpression extends Node {
 	initialise(transforms) {
 		if (
 			transforms.templateString &&
@@ -61,3 +61,5 @@ export default class TaggedTemplateExpression extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = TaggedTemplateExpression;

@@ -1,9 +1,9 @@
-import Node from '../Node.js';
-import { findIndex } from '../../utils/array.js';
-import reserved from '../../utils/reserved.js';
+const Node = require('../Node.js');
+const { findIndex } = require('../../utils/array.js');
+const reserved = require('../../utils/reserved.js');
 
 // TODO this code is pretty wild, tidy it up
-export default class ClassBody extends Node {
+class ClassBody extends Node {
 	transpile(code, transforms, inFunctionExpression, superName) {
 		if (transforms.classes) {
 			const name = this.parent.name;
@@ -235,3 +235,5 @@ export default class ClassBody extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = ClassBody;

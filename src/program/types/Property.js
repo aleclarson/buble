@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import reserved from '../../utils/reserved.js';
+const Node = require('../Node.js');
+const reserved = require('../../utils/reserved.js');
 
-export default class Property extends Node {
+class Property extends Node {
 	transpile(code, transforms) {
 		super.transpile(code, transforms);
 
@@ -50,3 +50,5 @@ export default class Property extends Node {
 		}
 	}
 }
+
+module.exports = Property;

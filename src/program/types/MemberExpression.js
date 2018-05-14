@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import reserved from '../../utils/reserved.js';
+const Node = require('../Node.js');
+const reserved = require('../../utils/reserved.js');
 
-export default class MemberExpression extends Node {
+class MemberExpression extends Node {
 	transpile(code, transforms) {
 		if (transforms.reservedProperties && reserved[this.property.name]) {
 			code.overwrite(this.object.end, this.property.start, `['`);
@@ -11,3 +11,5 @@ export default class MemberExpression extends Node {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = MemberExpression;

@@ -1,7 +1,7 @@
-import Node from '../Node.js';
-import deindent from '../../utils/deindent.js';
+const Node = require('../Node.js');
+const deindent = require('../../utils/deindent.js');
 
-export default class ClassDeclaration extends Node {
+class ClassDeclaration extends Node {
 	initialise(transforms) {
 		if (this.id) {
 			this.name = this.id.name;
@@ -77,3 +77,5 @@ export default class ClassDeclaration extends Node {
 		}
 	}
 }
+
+module.exports = ClassDeclaration;

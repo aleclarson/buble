@@ -1,7 +1,7 @@
-import LoopStatement from './shared/LoopStatement.js';
-import extractNames from '../extractNames.js';
+const LoopStatement = require('./shared/LoopStatement.js');
+const extractNames = require('../extractNames.js');
 
-export default class ForStatement extends LoopStatement {
+class ForStatement extends LoopStatement {
 	findScope(functionScope) {
 		return functionScope || !this.createdScope
 			? this.parent.findScope(functionScope)
@@ -46,3 +46,5 @@ export default class ForStatement extends LoopStatement {
 		super.transpile(code, transforms);
 	}
 }
+
+module.exports = ForStatement;

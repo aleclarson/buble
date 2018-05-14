@@ -1,4 +1,4 @@
-export default function isReference(node, parent) {
+module.exports = isReference; function isReference(node, parent) {
 	if (node.type === 'MemberExpression') {
 		return !node.computed && isReference(node.object, node);
 	}

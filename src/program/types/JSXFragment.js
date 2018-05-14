@@ -1,4 +1,6 @@
-import JSXElement from './JSXElement.js';
+const JSXElement = require('./JSXElement.js');
 
-export default class JSXFragment extends JSXElement {
+class JSXFragment extends JSXElement {
 }
+
+module.exports = JSXFragment;

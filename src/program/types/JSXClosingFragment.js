@@ -1,4 +1,4 @@
-import Node from '../Node.js';
+const Node = require('../Node.js');
 
 function containsNewLine(node) {
 	return (
@@ -6,7 +6,7 @@ function containsNewLine(node) {
 	);
 }
 
-export default class JSXClosingFragment extends Node {
+class JSXClosingFragment extends Node {
 	transpile(code) {
 		let spaceBeforeParen = true;
 
@@ -20,3 +20,5 @@ export default class JSXClosingFragment extends Node {
 		code.overwrite(this.start, this.end, spaceBeforeParen ? ' )' : ')');
 	}
 }
+
+module.exports = JSXClosingFragment;

@@ -1,8 +1,9 @@
-import Node from '../Node.js';
-import spread, { isArguments } from '../../utils/spread.js';
-import removeTrailingComma from '../../utils/removeTrailingComma.js';
+const Node = require('../Node.js');
+const spread = require('../../utils/spread.js');
+const removeTrailingComma = require('../../utils/removeTrailingComma.js');
+const { isArguments } = spread;
 
-export default class NewExpression extends Node {
+class NewExpression extends Node {
 	initialise(transforms) {
 		if (transforms.spreadRest && this.arguments.length) {
 			const lexicalBoundary = this.findLexicalBoundary();
@@ -53,3 +54,5 @@ export default class NewExpression extends Node {
 		}
 	}
 }
+
+module.exports = NewExpression;

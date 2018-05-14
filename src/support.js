@@ -1,4 +1,4 @@
-export const matrix = {
+exports.matrix = {
 	chrome: {
 		    48: 0b01001010100011001111,
 		    49: 0b01001111100111111111,
@@ -67,7 +67,7 @@ export const matrix = {
 	}
 };
 
-export const features = [
+exports.features = [
 	'arrow',
 	'classes',
 	'computedProperty',

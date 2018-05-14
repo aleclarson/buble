@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
-import { loopStatement } from '../../utils/patterns.js';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
+const { loopStatement } = require('../../utils/patterns.js');
 
-export default class Super extends Node {
+class Super extends Node {
 	initialise(transforms) {
 		if (transforms.classes) {
 			this.method = this.findNearest('MethodDefinition');
@@ -86,3 +86,5 @@ export default class Super extends Node {
 		}
 	}
 }
+
+module.exports = Super;

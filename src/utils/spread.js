@@ -1,8 +1,8 @@
-export function isArguments(node) {
+function isArguments(node) {
 	return node.type === 'Identifier' && node.name === 'arguments';
 }
 
-export default function spread(
+function spread(
 	code,
 	elements,
 	start,
@@ -68,3 +68,6 @@ export default function spread(
 
 	return true; // true indicates some spread elements
 }
+
+spread.isArguments = isArguments;
+module.exports = spread;

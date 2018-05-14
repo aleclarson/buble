@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import checkConst from '../../utils/checkConst.js';
-import destructure from '../../utils/destructure.js';
+const Node = require('../Node.js');
+const checkConst = require('../../utils/checkConst.js');
+const destructure = require('../../utils/destructure.js');
 
-export default class AssignmentExpression extends Node {
+class AssignmentExpression extends Node {
 	initialise(transforms) {
 		if (this.left.type === 'Identifier') {
 			const declaration = this.findScope(false).findDeclaration(this.left.name);
@@ -183,3 +183,5 @@ export default class AssignmentExpression extends Node {
 		code.appendLeft(this.right.end, ` )`);
 	}
 }
+
+module.exports = AssignmentExpression;

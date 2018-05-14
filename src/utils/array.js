@@ -1,4 +1,4 @@
-export function findIndex(array, fn) {
+function findIndex(array, fn) {
 	for (let i = 0; i < array.length; i += 1) {
 		if (fn(array[i], i)) return i;
 	}
@@ -6,6 +6,8 @@ export function findIndex(array, fn) {
 	return -1;
 }
 
-export function find(array, fn) {
+function find(array, fn) {
 	return array[findIndex(array, fn)];
 }
+
+module.exports = {findIndex, find};

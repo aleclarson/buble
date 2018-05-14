@@ -1,8 +1,8 @@
-import Node from '../Node.js';
-import CompileError from '../../utils/CompileError.js';
-import removeTrailingComma from '../../utils/removeTrailingComma.js';
+const Node = require('../Node.js');
+const CompileError = require('../../utils/CompileError.js');
+const removeTrailingComma = require('../../utils/removeTrailingComma.js');
 
-export default class FunctionExpression extends Node {
+class FunctionExpression extends Node {
 	initialise(transforms) {
 		if (this.generator && transforms.generator) {
 			throw new CompileError('Generators are not supported', this);
@@ -72,3 +72,5 @@ export default class FunctionExpression extends Node {
 		}
 	}
 }
+
+module.exports = FunctionExpression;

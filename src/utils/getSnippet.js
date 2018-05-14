@@ -9,7 +9,7 @@ function repeat(str, times) {
 	return result;
 }
 
-export default function getSnippet(source, loc, length = 1) {
+module.exports = getSnippet; function getSnippet(source, loc, length = 1) {
 	const first = Math.max(loc.line - 5, 0);
 	const last = loc.line;
 
