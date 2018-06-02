@@ -3,12 +3,6 @@
   "version": "0.19.3",
   "description": "The blazing fast, batteries-included ES2015 compiler",
   "main": "src/index.js",
-  "module": "dist/buble.es.js",
-  "browser": {
-    "dist/buble.cjs.js": "./dist/buble-browser.cjs.js",
-    "dist/buble.es.js": "./dist/buble-browser.es.js"
-  },
-  "unpkg": "dist/buble-browser-deps.umd.js",
   "files": [
     "bin",
     "src",
@@ -26,26 +20,9 @@
   "bin": {
     "buble": "./bin/buble"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rich-Harris/buble.git"
-  },
-  "keywords": [
-    "javascript",
-    "transpilation",
-    "compilation",
-    "esnext",
-    "es2015",
-    "es2017",
-    "es6",
-    "es7"
-  ],
+  "repository": "git://github.com/aleclarson/buble.git",
   "author": "Rich Harris",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Rich-Harris/buble/issues"
-  },
-  "homepage": "https://github.com/Rich-Harris/buble#README",
   "devDependencies": {
     "console-group": "^0.3.3",
     "eslint": "^4.17.0",
