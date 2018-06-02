@@ -1,11 +1,15 @@
-const acorn = require('acorn');
 const Program = require('./program/Program.js');
 const { features, matrix } = require('./support.js');
 const getSnippet = require('./utils/getSnippet.js');
 
 const dangerousTransforms = ['dangerousTaggedTemplateString', 'dangerousForOf'];
 
-function target(target) {
+const buble = exports;
+
+// acorn must be injected.
+buble.parse = null;
+
+buble.target = function(target) {
 	const targets = Object.keys(target);
 	let bitmask = targets.length
 		? 0b11111111111111111111
@@ -42,13 +46,13 @@ function target(target) {
 	});
 
 	return transforms;
-}
+};
 
-function transform(source, options = {}) {
+buble.transform = function(source, options = {}) {
 	let ast;
 
 	try {
-		ast = acorn.parse(source, {
+		ast = buble.parse(source, {
 			ecmaVersion: 9,
 			preserveParens: true,
 			sourceType: 'module',
@@ -59,7 +63,7 @@ function transform(source, options = {}) {
 		throw err;
 	}
 
-	let transforms = target(options.target || {});
+	let transforms = buble.target(options.target || {});
 	Object.keys(options.transforms || {}).forEach(name => {
 		if (name === 'modules') {
 			if (!('moduleImport' in options.transforms))
@@ -74,8 +78,6 @@ function transform(source, options = {}) {
 	});
 
 	return new Program(source, ast, transforms, options).export(options);
-}
+};
 
-exports.target = target;
-exports.transform = transform;
-exports.VERSION = require('../package.json').version;
+buble.VERSION = require('../package.json').version;
