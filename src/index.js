@@ -1,10 +1,7 @@
 const acorn = require('acorn');
-const acornDynamicImport = require('acorn-dynamic-import/lib/inject').default;
 const Program = require('./program/Program.js');
 const { features, matrix } = require('./support.js');
 const getSnippet = require('./utils/getSnippet.js');
-
-const { parse } = acornDynamicImport(acorn);
 
 const dangerousTransforms = ['dangerousTaggedTemplateString', 'dangerousForOf'];
 
@@ -51,13 +48,10 @@ function transform(source, options = {}) {
 	let ast;
 
 	try {
-		ast = parse(source, {
+		ast = acorn.parse(source, {
 			ecmaVersion: 9,
 			preserveParens: true,
 			sourceType: 'module',
-			plugins: {
-				dynamicImport: true
-			}
 		});
 	} catch (err) {
 		err.snippet = getSnippet(source, err.loc);
