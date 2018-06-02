@@ -20,15 +20,6 @@ const IfStatement = require('./IfStatement.js');
 const ImportDeclaration = require('./ImportDeclaration.js');
 const ImportDefaultSpecifier = require('./ImportDefaultSpecifier.js');
 const ImportSpecifier = require('./ImportSpecifier.js');
-const JSXAttribute = require('./JSXAttribute.js');
-const JSXClosingElement = require('./JSXClosingElement.js');
-const JSXClosingFragment = require('./JSXClosingFragment.js');
-const JSXElement = require('./JSXElement.js');
-const JSXExpressionContainer = require('./JSXExpressionContainer.js');
-const JSXFragment = require('./JSXFragment.js');
-const JSXOpeningElement = require('./JSXOpeningElement.js');
-const JSXOpeningFragment = require('./JSXOpeningFragment.js');
-const JSXSpreadAttribute = require('./JSXSpreadAttribute.js');
 const Literal = require('./Literal.js');
 const LoopStatement = require('./shared/LoopStatement.js');
 const MemberExpression = require('./MemberExpression.js');
@@ -70,15 +61,6 @@ module.exports = {
 	ImportDeclaration,
 	ImportDefaultSpecifier,
 	ImportSpecifier,
-	JSXAttribute,
-	JSXClosingElement,
-	JSXClosingFragment,
-	JSXElement,
-	JSXExpressionContainer,
-	JSXFragment,
-	JSXOpeningElement,
-	JSXOpeningFragment,
-	JSXSpreadAttribute,
 	Literal,
 	MemberExpression,
 	NewExpression,

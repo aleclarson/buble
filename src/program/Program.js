@@ -4,9 +4,6 @@ const wrap = require('./wrap.js');
 
 function Program(source, ast, transforms, options) {
 	this.type = 'Root';
-
-	// options
-	this.jsx = options.jsx || 'React.createElement';
 	this.options = options;
 
 	this.source = source;
