@@ -9,31 +9,31 @@ const buble = exports;
 // acorn must be injected.
 buble.parse = null;
 
-buble.target = function(target) {
-	const targets = Object.keys(target);
+buble.env = function(env) {
+	const targets = Object.keys(env);
 	let bitmask = targets.length
 		? 0b11111111111111111111
 		: 0b01000000000000000000;
 
-	Object.keys(target).forEach(environment => {
-		const versions = matrix[environment];
+	targets.forEach(target => {
+		const versions = matrix[target];
 		if (!versions)
 			throw new Error(
-				`Unknown environment '${environment}'. Please raise an issue at https://github.com/Rich-Harris/buble/issues`
+				`Unknown environment '${target}'. Please raise an issue at https://github.com/Rich-Harris/buble/issues`
 			);
 
-		const targetVersion = target[environment];
-		if (!(targetVersion in versions))
+		const version = env[target];
+		if (!(version in versions))
 			throw new Error(
-				`Support data exists for the following versions of ${environment}: ${Object.keys(
+				`Support data exists for the following versions of ${target}: ${Object.keys(
 					versions
 				).join(
 					', '
 				)}. Please raise an issue at https://github.com/Rich-Harris/buble/issues`
 			);
-		const support = versions[targetVersion];
 
-		bitmask &= support;
+		// Transpile any features not supported by this target version.
+		bitmask &= versions[version];
 	});
 
 	let transforms = Object.create(null);
@@ -63,7 +63,7 @@ buble.transform = function(source, options = {}) {
 		throw err;
 	}
 
-	let transforms = buble.target(options.target || {});
+	let transforms = buble.env(options.env || options.target || {});
 	Object.keys(options.transforms || {}).forEach(name => {
 		if (name === 'modules') {
 			if (!('moduleImport' in options.transforms))
