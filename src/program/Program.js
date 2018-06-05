@@ -40,7 +40,7 @@ function Program(source, ast, transforms, options) {
 Program.prototype = {
 	export(options = {}) {
 		return {
-			code: this.magicString.toString(),
+			content: this.magicString.toString(),
 			map: this.magicString.generateMap({
 				file: options.file,
 				source: options.source,
