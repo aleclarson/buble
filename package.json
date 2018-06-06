@@ -1,5 +1,5 @@
 {
-  "name": "buble",
+  "name": "@cush/buble",
   "version": "0.19.3",
   "description": "The blazing fast, batteries-included ES2015 compiler",
   "main": "src/index.js",
