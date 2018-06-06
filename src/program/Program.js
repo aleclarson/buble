@@ -1,4 +1,4 @@
-const MagicString = require('magic-string');
+const MagicString = require('@cush/magic-string');
 const BlockStatement = require('./BlockStatement.js');
 const wrap = require('./wrap.js');
 
