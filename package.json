@@ -4,8 +4,7 @@
   "description": "The blazing fast, batteries-included ES2015 compiler",
   "main": "src/index.js",
   "files": [
-    "src",
-    "README.md"
+    "src"
   ],
   "scripts": {
     "test": "mocha test/test.js",
