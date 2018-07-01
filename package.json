@@ -9,7 +9,6 @@
   ],
   "scripts": {
     "test": "mocha test/test.js",
-    "prepublish": "npm test",
     "lint": "eslint bin/ src/ test/test.js"
   },
   "repository": "git://github.com/aleclarson/buble.git",
