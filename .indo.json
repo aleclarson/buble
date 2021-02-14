@@ -1,0 +1,10 @@
+{
+  "repos": {
+    "packages/jest-buble": {
+      "url": "https://github.com/aleclarson/jest-buble.git"
+    },
+    "vendor/rollup-jest": {
+      "url": "https://github.com/aleclarson/rollup-jest"
+    }
+  }
+}

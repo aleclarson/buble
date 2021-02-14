@@ -5,9 +5,9 @@ import AwaitExpression from './AwaitExpression';
 
 export default class ArrowFunctionExpression extends Node {
 	initialise(transforms) {
-		if (this.async && transforms.asyncAwait) {
-			CompileError.missingTransform("async arrow functions", "asyncAwait", this);
-		}
+		// if (this.async && transforms.asyncAwait) {
+		// 	CompileError.missingTransform("async arrow functions", "asyncAwait", this);
+		// }
 		this.body.createScope();
 		super.initialise(transforms);
 	}

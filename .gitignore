@@ -3,4 +3,6 @@ node_modules
 dist
 test/**/actual
 sandbox
+packages
+vendor
 test/bundlers/package-lock.json

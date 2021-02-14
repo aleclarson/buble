@@ -8,9 +8,9 @@ export default class FunctionDeclaration extends Node {
 		if (this.generator && transforms.generator) {
 			CompileError.missingTransform("generators", "generator", this);
 		}
-		if (this.async && transforms.asyncAwait) {
-			CompileError.missingTransform("async functions", "asyncAwait", this);
-		}
+		// if (this.async && transforms.asyncAwait) {
+		// 	CompileError.missingTransform("async functions", "asyncAwait", this);
+		// }
 
 		this.body.createScope();
 

@@ -6,7 +6,7 @@ var assert = require('assert');
 var glob = require('glob');
 var SourceMapConsumer = require('source-map').SourceMapConsumer;
 var getLocation = require('./utils/getLocation.js');
-var buble = require('..');
+var buble = require('../src');
 
 require('source-map-support').install();
 require('console-group').install();
